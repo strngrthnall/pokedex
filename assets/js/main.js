@@ -8,7 +8,9 @@ function convertPokemonToLi(pokemon) {
     pokemonName = 'nidoran ♂'
   } else if(pokemon.name === 'nidoran-f') {
     pokemonName = 'nidoran ♀'
-  } else {
+  } else if(pokemon.name === 'farfetchd') {
+    pokemonName = `farfetch'd`
+  }else {
     pokemonName = pokemon.name
   }
 
