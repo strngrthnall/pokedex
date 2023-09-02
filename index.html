@@ -23,16 +23,31 @@
 <body>
   
   <section class="content">
-    <h1>Pokedex</h1>
+    <div class="header">
+      <h1>Pokedex</h1>
 
-    <ol id="pokemonList" class="pokemons">
+      <select class="switch" id="generation">
+        <option value="151">Geração I</option>
+        <option value="251">Geração II</option>
+        <option value="386">Geração III</option>
+        <option value="493">Geração IV</option>
+      </select>
+    </div>
+
+    <ol id="pokemonList" class="pokemons loading">
       <!-- Pokemons Aqui! -->
 
     </ol>
 
-    <div class="pagination">
+    <!-- <div class="pagination">
       <button id="loadMoreButton" type="button">
         Load More
+      </button>
+    </div> -->
+
+    <div class="returnToTop">
+      <button id="returnToTopButton" type="button">
+        Voltar ao topo
       </button>
     </div>
 
