@@ -12,6 +12,7 @@ function convertPokemonApiDetailToPokemon(pokeDetail) {
   pokemon.type = type1
   pokemon.photo = pokeDetail.sprites.other['official-artwork'].front_default
 
+
   return pokemon
 
 }

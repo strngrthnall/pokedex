@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokédex</title>
+
+  <!--Normalize CSS-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" 
+    integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!--Fonts Roboto-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700&display=swap" rel="stylesheet">
+
+  <!--Nosso CSS-->
+  <link rel="stylesheet" href="./assets/css/global.css">
+  <link rel="stylesheet" href="./assets/css/details.css">
+</head>
+
+<body>
+  
+  <section class="content inside-page grass">
+    <div class="background transparent">
+      <div class="icons">
+        <a href="#" class="icon">
+          <img src="./assets/icons/arrow.png" alt="Return">
+        </a>
+        <a href="#" class="icon">
+          <img src="./assets/icons/heart.png" alt="Like">
+        </a>
+      </div>
+      <div class="infos">
+        <div class="title">
+          <h1 class="name">Bulbassaur</h1>
+          <div class="types">
+            <li class="type grass">Grass</li>
+            <li class="type poison">Poison</li>
+          </div>
+        </div>
+        <span class="number">#001</span>
+      </div>
+      <img class="pokemon-img" src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png' alt=''>
+    </div>
+    <div class="background about">
+      <div class="about-header">
+        <ol class="tabs">
+          <li class="tab active">
+            <a class="black" href="#">About</a>
+          </li>
+          <li class="tab">
+            <a class="" href="#">Base Stats</a>
+          </li>
+          <li class="tab">
+            <a class="" href="#">Evolution</a>
+          </li>
+          <li class="tab">
+            <a class="" href="#">Moves</a>
+          </li>
+        </ol>
+        <div class="about-details">
+          <ol class="details">
+            <div class="detail">
+              <li class="title">Specie</li>
+              <li class="specifications">Seed</li>
+            </div>
+            <div class="detail">
+              <li class="title">Height</li>
+              <li class="specifications">0.7 cm</li>
+            </div>
+            <div class="detail">
+              <li class="title">Weight</li>
+              <li class="specifications">6.9 kg</li>
+            </div>
+            <div class="detail">
+              <li class="title">Abilities</li>
+              <li class="specifications">Overgorw, Clorophyl</li>
+            </div>
+          </ol>
+          <h3 class="about-breeding">Breeding</h3>
+          <ol class="breeding-details details">
+            <div class="detail">
+              <li class="title">Gender</li>
+              <div class="detail">
+                <li class="specifications">
+                  <span class="masc">♂</span> 87.5%
+                </li>
+                <li class="specifications">
+                  <span class="fem">♀</span> 12.5%
+                </li>
+              </div>
+            </div>
+            <div class="detail">
+              <li class="title">Egg Groups</li>
+              <li class="specification">Monster</li>
+            </div>
+            <div class="detail">
+              <li class="title">Egg Cycle</li>
+              <li class="specification">Grass</li>
+            </div>
+          </ol>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+  
+  <!--Nosso JS-->
+  <script src="./assets/js/about.js"></script>
+  <script src="./assets/js/pokemon-model.js"></script>
+  <script src="./assets/js/poke-api.js"></script>
+  <script src="./assets/js/details.js"></script>
+</body>
+
+</html>

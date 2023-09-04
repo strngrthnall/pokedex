@@ -5,9 +5,9 @@ const generationSelector = document.getElementById('generation')
 let limit = 151
 let offset = 0
 
-function convertPokemonTypesToLi(pokemonTypes) {
-  return pokemonTypes.map(typeSlot => `<li class="type">${typeSlot.type.name}</li>`)
-}
+// function convertPokemonTypesToLi(pokemonTypes) {
+//   return pokemonTypes.map(typeSlot => `<li class="type">${typeSlot.type.name}</li>`)
+// }
 
 function loadPokemonItems(offset, limit) {
 
@@ -17,19 +17,6 @@ function loadPokemonItems(offset, limit) {
     pokemonList.innerHTML = ''
     pokemonList.innerHTML += pokemons.map(pokemon => {
       var pokemonName
-
-      // switch(pokemonName) {
-      //   case 'nidoran-m':
-      //     pokemonName = 'nidoran ♂'
-      //   case 'nidoran-f':
-      //     pokemonName = 'nidoran ♀'
-      //   case 'farfetchd':
-      //     pokemonName = `farfetch'd`
-      //   case 'giratina-altered':
-      //     pokemonName = 'giratina'
-      //   case 'deoxys-normal':
-      //     pokemonName = 'deoxys'
-      // }
 
       if(pokemon.name === 'nidoran-m') {
         pokemonName = 'nidoran ♂'
@@ -86,13 +73,6 @@ generationSelector.addEventListener('change', () => {
   console.log(generationSelected)
 
   loadPokemonItems(offset, generationSelected)
-  
-  // switch(generationSelected){
-  //   case '151':
-  //     loadPokemonItems(offset, 151);
-  //   case '251':
-  //     loadPokemonItems(offset, 251);
-  //}
 
 })
 
