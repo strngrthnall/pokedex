@@ -2,6 +2,7 @@ const background = document.getElementById('background')
 const pokemonHeader = document.getElementById('header')
 const pokemonSprite = document.getElementById('sprite')
 const pokemonDetails = document.getElementById('details')
+const likeButton = document.getElementById('heart')
 
 const urlParams = new URLSearchParams(window.location.search)
 const pokemonName = urlParams.get("name")
@@ -68,5 +69,19 @@ function loadPokemonInfos(pokemonName = 'bulbasaur') {
   })
 
 }
+
+var isFilled = true
+
+likeButton.addEventListener('click', () => {
+  
+    if(isFilled) {
+      likeButton.src = './assets/icons/filled-heart.png'
+      
+    } else {
+      likeButton.src = './assets/icons/heart.png'
+    }
+
+    isFilled = !isFilled
+})
 
 loadPokemonInfos(pokemonName)
