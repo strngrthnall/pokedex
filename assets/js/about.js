@@ -3,10 +3,27 @@ const aboutApi = {}
 function convertToData(pokemonJson, speciesJson, genderJson) {
   const pokemon = new Pokemon()
   pokemon.id = pokemonJson.id
-  pokemon.name = pokemonJson.name
+
+  if(pokemonJson.name === 'nidoran-m') {
+    pokemon.name = 'nidoran ♂'
+  } else if(pokemonJson.name === 'nidoran-f') {
+    pokemon.name = 'nidoran ♀'
+  } else if(pokemonJson.name === 'farfetchd') {
+    pokemon.name = `farfetch'd`
+  } else if(pokemonJson.name === 'deoxys-normal') {
+    pokemon.name = `deoxys`
+  } else if(pokemonJson.name === 'giratina-altered') {
+    pokemon.name = `giratina`
+  } else if(pokemonJson.name === 'shaymin-land') {
+    pokemon.name = `shaymin`
+  } else if(pokemonJson.name === 'wormadam-plant') {
+    pokemon.name = `wormadam`
+  } else {
+    pokemon.name = pokemonJson.name
+  }
 
   const pokemonWeight = pokemonJson.weight / 10
-  const pokemonHeight = pokemonJson.height / 10
+  const pokemonHeight = pokemonJson.height * 10
 
   pokemon.height = `${pokemonHeight.toFixed(1)} cm`
   pokemon.weight = `${pokemonWeight.toFixed(1)} kg`
@@ -24,16 +41,14 @@ function convertToData(pokemonJson, speciesJson, genderJson) {
   const genera = speciesJson.genera[7].genus
   pokemon.species = genera.slice(0, -8)
 
-  const speciesGender = genderJson.pokemon_species_details
-  for (var i = 0; i < 839; i++) {
-    if (speciesGender[i].pokemon_species.name === pokemon.name) {
-      const femRatio = (speciesGender[i].rate / 8) * 100
-      const mascRatio = (femRatio - 100)*-1
+  const speciesGender = speciesJson.gender_rate
+  const femRatio = (speciesGender / 8) * 100
+  const mascRatio = (femRatio - 100)*-1
       
-      pokemon.femGenderRatio = femRatio
-      pokemon.mascGenderRatio = mascRatio
-    }
-  }
+  pokemon.femGenderRatio = femRatio
+  pokemon.masGenderRatio = mascRatio
+
+  pokemon.eggGroup = speciesJson.egg_groups[0].name
   
   return pokemon
 }
@@ -56,4 +71,3 @@ aboutApi.getDetails = async (pokemonName = 'bulbasaur') => {
   return convertToData(pokemonJson, speciesJson, genderJson)
 }
 
-aboutApi.getDetails()

@@ -16,35 +16,15 @@ function loadPokemonItems(offset, limit) {
     pokemonList.classList.add("pokemons")
     pokemonList.innerHTML = ''
     pokemonList.innerHTML += pokemons.map(pokemon => {
-      var pokemonName
-
-      if(pokemon.name === 'nidoran-m') {
-        pokemonName = 'nidoran ♂'
-      } else if(pokemon.name === 'nidoran-f') {
-        pokemonName = 'nidoran ♀'
-      } else if(pokemon.name === 'farfetchd') {
-        pokemonName = `farfetch'd`
-      } else if(pokemon.name === 'deoxys-normal') {
-        pokemonName = `deoxys`
-      } else if(pokemon.name === 'giratina-altered') {
-        pokemonName = `giratina`
-      } else if(pokemon.name === 'shaymin-land') {
-        pokemonName = `shaymin`
-      } else if(pokemon.name === 'wormadam-plant') {
-        pokemonName = `wormadam`
-      } else {
-        pokemonName = pokemon.name
-      }
-
       return `
         <li class="pokemon ${pokemon.type}">
           <span class="number">#${("000" + pokemon.id).slice(-3)}</span>
-          <span class="name">${pokemonName}</span>
+          <span class="name">${pokemon.name}</span>
           <div class="detail">
             <ol class="types">
               ${pokemon.types.map(type => `<li class="type ${type}">${type}</li>`).join('')}
             </ol>
-            <img src=${pokemon.photo} alt=${pokemonName}>
+            <img src=${pokemon.photo} alt=${pokemon.name}>
           </div>
         </li>
       `

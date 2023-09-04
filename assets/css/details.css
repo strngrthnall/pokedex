@@ -60,6 +60,10 @@ a{
   padding: 0 0 .5rem ;
 }
 
+.name, .abilities, .egg{
+  text-transform: capitalize;
+}
+
 .background {
   height: 100%;
   width: 100%;
