@@ -19,7 +19,7 @@ function loadPokemonItems(offset, limit) {
       return `
         <li class="pokemon ${pokemon.type}">
           <span class="number">#${("000" + pokemon.id).slice(-3)}</span>
-          <span class="name">${pokemon.name}</span>
+          <a href="pokemon-details.html?name=${pokemon.name}" class="name">${pokemon.name}</a>
           <div class="detail">
             <ol class="types">
               ${pokemon.types.map(type => `<li class="type ${type}">${type}</li>`).join('')}

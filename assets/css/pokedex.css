@@ -115,6 +115,7 @@
   color: #FFF;
   margin-bottom: 0;
   text-transform: capitalize;
+  text-decoration: none;
 }
 
 .pokemon .number {

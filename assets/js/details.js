@@ -3,7 +3,10 @@ const pokemonHeader = document.getElementById('header')
 const pokemonSprite = document.getElementById('sprite')
 const pokemonDetails = document.getElementById('details')
 
-function loadPokemonInfos(pokemonName = 'weedle') {
+const urlParams = new URLSearchParams(window.location.search)
+const pokemonName = urlParams.get("name")
+
+function loadPokemonInfos(pokemonName = 'bulbasaur') {
   aboutApi.getDetails(pokemonName).then(pokemon => {
     background.classList.add(`${pokemon.types[0]}`)
 
@@ -66,4 +69,4 @@ function loadPokemonInfos(pokemonName = 'weedle') {
 
 }
 
-loadPokemonInfos()
+loadPokemonInfos(pokemonName)
