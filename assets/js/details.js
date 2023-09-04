@@ -15,8 +15,7 @@ function loadPokemonInfos(pokemonName = 'bulbasaur') {
       <div class="title">
         <h1 class="name">${pokemon.name}</h1>
         <div class="types">
-          <li class="type ${pokemon.types[0]}">${pokemon.types[0]}</li>
-          <li class="type ${pokemon.types[1]}">${pokemon.types[1]}</li>
+          ${pokemon.types.map(type => `<li class="type ${type}">${type}</li>`).join('')}
         </div>
       </div>
       <span class="number">#${("000" + pokemon.id).slice(-3)}</span>`
@@ -43,7 +42,7 @@ function loadPokemonInfos(pokemonName = 'bulbasaur') {
         </div>
         <div class="detail">
           <li class="title">Abilities</li>
-          <li class="specifications abilities">${pokemon.abilities[0]}, ${pokemon.abilities[1]}</li>
+          <li class="specifications abilities">${pokemon.abilities.map(abilitie => ` ${abilitie}`)}</li>
         </div>
       </ol>
       <h3 class="about-breeding">Breeding</h3>
