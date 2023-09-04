@@ -1,21 +1,5 @@
 const aboutApi = {}
 
-aboutApi.getGenderRatio = async (pokemonName = 'bulbasaur') => {
-  const genderUrl = 'https://pokeapi.co/api/v2/gender/1'
-  
-  const genderResponse = await fetch(genderUrl)
-  const genderJson = await genderResponse.json()
-  const speciesGender = genderJson.pokemon_species_details
-
-  for (var i = 0; i < 839; i++) {
-    if (speciesGender[i].pokemon_species.name === pokemonName) {
-      return speciesGender[i].rate
-    }
-  }
-
-  // const genderRatio = genderJson
-}
-
 function convertToData(pokemonJson, speciesJson, genderJson) {
   const pokemon = new Pokemon()
   pokemon.id = pokemonJson.id
@@ -51,10 +35,7 @@ function convertToData(pokemonJson, speciesJson, genderJson) {
     }
   }
   
-  
-  
-
-  console.log(pokemon.mascGenderRatio)
+  return pokemon
 }
 
 aboutApi.getDetails = async (pokemonName = 'bulbasaur') => {
