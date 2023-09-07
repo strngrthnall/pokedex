@@ -38,6 +38,7 @@ pokemonList.classList.add("loading")
 pokemonList.innerHTML = '<img class="loading__img" src="https://icon-library.com/images/pokeball-icon-png/pokeball-icon-png-19.jpg" alt="">'
 loadPokemonItems(offset, limit)
 
+
 // loadMoreButton.addEventListener('click', () => {
 //   offset += limit
 //   loadPokemonItems(offset, limit)
